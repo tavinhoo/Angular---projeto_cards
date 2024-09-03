@@ -20,3 +20,11 @@
         font-size: 30px;
     }
 }
+
+:host ::ng-deep #unique-black-button .card-cancel-button {
+    background-color: black !important;
+}
+
+:host .mdc-slider__track--active_fill {
+    border-color: yellow !important;
+}

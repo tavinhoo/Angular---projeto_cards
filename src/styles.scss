@@ -1,0 +1,7 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// afeta qualquer tag mat-slider da aplicação
+.mdc-slider__track--active_fill {
+    border-color: yellowgreen !important;
+}
