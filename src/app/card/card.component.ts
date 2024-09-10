@@ -1,27 +1,26 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, input, ViewEncapsulation } from '@angular/core';
 
-interface IPlano {
-  infos: IInfos;
-}
+// interface IPlano {
+//   infos: IInfos;
+// }
 
-interface IInfos {
-  tipo: string;
-  preco: number;
-}
+// interface IInfos {
+//   tipo: string;
+//   preco: number;
+// }
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  encapsulation: ViewEncapsulation.ShadowDom
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 
 export class CardComponent {
-  // @ts-ignore
-  plano: any = {
-    infos: {
-      tipo: 'Simples',
-      preco: 100
-    }
-  }
+
+  @Input('planTypeAlias') planType: string = '';
+  // @Input('planTypeAlias') planType: string = '';
+
+  // @Input({required: true}) planPrice: number = 0;
+  @Input({required: true, alias:'planPriceAlias'}) planPrice: number = 0;
 }
