@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  cardPLanType = 'Simples';
+  cardPlanType = 'Simples';
   cardPlanPrice = 120;
+
+  handlePlanType(text: string) {
+    this.cardPlanType = text;
+  }
 
 }

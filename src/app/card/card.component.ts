@@ -18,8 +18,20 @@ import { Component, Input, input, ViewEncapsulation } from '@angular/core';
 
 export class CardComponent {
 
-  @Input('planTypeAlias') planType: string = '';
+  // Variável private que guarda o valor recebido pelo input;
+  private _planType: string = '';
+
+  // Aula Input com get e set
+  // @SET
+  @Input('planType') set planType(value: string) {
+    this._planType = value.toUpperCase();
+  }
   // @Input('planTypeAlias') planType: string = '';
+
+  // @GET
+  get planType(): string {
+    return this._planType;
+  }
 
   // @Input({required: true}) planPrice: number = 0;
   @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
