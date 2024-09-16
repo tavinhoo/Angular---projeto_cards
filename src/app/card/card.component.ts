@@ -9,6 +9,11 @@ import { Component, Input, input, ViewEncapsulation } from '@angular/core';
 //   preco: number;
 // }
 
+const handlePlanType = (value: string) => {
+  console.log('Passou por handlePlanType!!');
+  return value.toUpperCase();
+}
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -19,19 +24,25 @@ import { Component, Input, input, ViewEncapsulation } from '@angular/core';
 export class CardComponent {
 
   // Variável private que guarda o valor recebido pelo input;
-  private _planType: string = '';
+  // private _planType: string = '';
 
   // Aula Input com get e set
   // @SET
-  @Input('planType') set planType(value: string) {
-    this._planType = value.toUpperCase();
-  }
+
+  // @Input('planType') set planType(value: string) {
+  //   this._planType = value.toUpperCase();
+  // }
+
+  // Propriedade Transform do @Input
+  // @Input({ alias: 'planType', transform: (value: string) => value.toUpperCase()}) planType: string = '';
+  @Input({ alias: 'planType', transform: (value: string) => handlePlanType(value)}) planType: string = '';
+
   // @Input('planTypeAlias') planType: string = '';
 
   // @GET
-  get planType(): string {
-    return this._planType;
-  }
+  // get planType(): string {
+  //   return this._planType;
+  // }
 
   // @Input({required: true}) planPrice: number = 0;
   @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
