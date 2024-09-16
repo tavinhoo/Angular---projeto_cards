@@ -5,14 +5,20 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-
 export class AppComponent {
 
-  cardPlanType = 'Simples';
-  cardPlanPrice = 120;
-
-  handlePlanType(text: string) {
-    this.cardPlanType = text;
+  plan1 = {
+    name: "Simples",
+    price: 90
   }
 
+
+  buttonClicked() {
+    console.log('Button Clicked!!');
+  }
+
+  onCardButtonClicked() {
+    console.log('OnCardButtonClicked')
+    // Chamada HTTP
+  }
 }

@@ -1,11 +1,10 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,900&display=swap');
 
-// afeta qualquer tag mat-slider da aplicação
-.mdc-slider__track--active_fill {
-    border-color: yellowgreen !important;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-.card-cancel-button {
-    background-color: palegreen !important;
+body {
+    background-color: rgb(82, 82, 82);
 }

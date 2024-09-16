@@ -1,6 +1,4 @@
 <div class="cards-container">
-    <app-card [planType]="cardPlanType" [planPriceAlias]="cardPlanPrice"></app-card>
-    <app-card-roxo></app-card-roxo>
+    <app-card [planType]="plan1.name" [planPrice]="plan1.price" [cardStyle]="'orange'" (buttonClicked)="onCardButtonClicked()"></app-card>
+    <app-card [planType]="'Completo'" [planPrice]="200" [cardStyle]="'purple'" (buttonClicked)="onCardButtonClicked()"></app-card>
 </div>
-
-<input #meuInput type="text" (keyup)="handlePlanType(meuInput.value)" placeholder="Digite o plano...">
